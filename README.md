@@ -1,4 +1,3 @@
-sass-autoprefixer-csslint
-=========================
+# sass-autoprefixer-csslint
 
-Sample repo for Node.js compilation of Sass (scss), with Autoprefixer and CSSLint support.
+Sample repo for Node.js compilation of Sass (scss) files, with Autoprefixer and CSSLint support using #GruntJS.

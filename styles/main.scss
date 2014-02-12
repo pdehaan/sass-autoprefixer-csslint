@@ -1,0 +1,196 @@
+@import "colors";
+@import "fonts";
+
+$media-small-screen: "only screen and (max-width: 500px)";
+
+html {
+    @media #{$media-small-screen} {
+        background-color: red;
+    }
+}
+
+body {
+    background-color: $body-background-color;
+    font-family: $body-font;
+}
+
+header {
+    border-radius: 20px;
+    font-family: $header-font;
+    @media #{$media-small-screen} {
+        border-radius: 0;
+    }
+}
+
+header {
+  h1,
+  h2 {
+    line-height: 1em;
+    margin: 0;
+  }
+  h1 {
+    font-size: 24px;
+    font-weight: normal;
+
+    span {
+      position: relative;
+      left: -9999px;
+    }
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: 200;
+    margin: 20px 0 32px 0;
+  }
+}
+
+section p {
+  font-size: 18px;
+}
+
+
+
+a {
+  color: #0095dd;
+  cursor: pointer; // Use the correct cursor for anchors.
+}
+
+h2 {
+    color: red;
+}
+
+noscript {
+    color: #d63920;
+    display: block;
+    margin: 160px 0 0 0;
+}
+
+#stage {
+  animation: fadein 0.5s;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+  margin: 100px auto 0 auto;
+  min-height: 450px;
+  padding: 0 40px 40px 40px;
+  text-align: center;
+
+  .js & {
+    display: none;
+  }
+}
+
+
+.fox-logo {
+  background: url(/images/firefox.png);
+  background-size: 96px 102px;
+  height: 102px;
+  margin: 0 auto -50px auto;
+  position: relative;
+  top: -50px;
+  width: 96px;
+  z-index: 999;
+
+  #fxa-signup-header & {
+    animation: movein 0.5s;
+  }
+}
+
+
+
+
+
+
+.after {
+    color: red;
+    .before & {
+        color: green;
+    }
+}
+
+.input-row {
+    input[type='text'],
+    input[type='email'],
+    input[type='password'],
+    select {
+        box-shadow: inset 0 1px 1px $input-row-box-shadow-color;
+    }
+}
+
+.privacy-links,
+.privacy-links a {
+    color: #8a9ba8;
+    margin-top: 35px;
+    transition-duration: 150ms;
+}
+
+.privacy-links {
+    + .button-row {
+        margin-top: 20px;
+    }
+
+    a {
+        &:active,
+        &:hover,
+        &:focus {
+            color: #0095dd;
+        }
+    }
+}
+
+
+.password-row {
+    position: absolute;
+    input[type='password'] {
+        padding-right: 75px;
+    }
+
+    // The addition of right, top, border-radius, and background-color are
+    // all to fix a bug in firefox 29 where the right padding of the password
+    // field is ignored and password text flows under the show/hide button. When
+    // Firefox is fixed, top and right can be set to 0, height set to 44px,
+    // border-radius and background-color removed.
+    //
+    // See https://bugzilla.mozilla.org/show_bug.cgi?id=965237
+    .show-password-label {
+        user-select: none;
+    }
+
+    > .password:hover {
+        border-color: #424f59;
+    }
+}
+
+
+
+.error,
+.success {
+    color: $message-text-color;
+}
+
+.error {
+    background-color: $error-background-color;
+}
+.success {
+    background-color: $success-background-color;
+}
+
+h3 {
+    small {
+        font-weight: bold;
+        color: salmon;
+    }
+
+    big {
+        color: darken(salmon, 0%);
+    }
+}
+
+button {
+    background-color: $button-background-color;
+    &:hover {
+        background-color: $button-hover-color;
+    }
+}
+
+@import "keyframes";
